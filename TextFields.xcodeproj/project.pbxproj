@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E507AD492A1B8A7500F1A976 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507AD482A1B8A7500F1A976 /* CustomTextField.swift */; };
+		E507AD4D2A1B8AFF00F1A976 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = E507AD4C2A1B8AFF00F1A976 /* CustomTextField.xib */; };
 		E5AF314E2A0A504C00FB2C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF314D2A0A504C00FB2C92 /* AppDelegate.swift */; };
 		E5AF31502A0A504C00FB2C92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF314F2A0A504C00FB2C92 /* SceneDelegate.swift */; };
 		E5AF31522A0A504C00FB2C92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF31512A0A504C00FB2C92 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E507AD482A1B8A7500F1A976 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E507AD4C2A1B8AFF00F1A976 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		E5AF314A2A0A504C00FB2C92 /* TextFields.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextFields.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5AF314D2A0A504C00FB2C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5AF314F2A0A504C00FB2C92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E507AD3A2A1B6D3100F1A976 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF31532A0A504C00FB2C92 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E507AD3B2A1B6D5100F1A976 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF31512A0A504C00FB2C92 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E507AD3C2A1B6D6800F1A976 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E507AD412A1B849300F1A976 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				E507AD482A1B8A7500F1A976 /* CustomTextField.swift */,
+				E507AD4C2A1B8AFF00F1A976 /* CustomTextField.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		E5AF31412A0A504C00FB2C92 = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +135,10 @@
 			children = (
 				E5AF314D2A0A504C00FB2C92 /* AppDelegate.swift */,
 				E5AF314F2A0A504C00FB2C92 /* SceneDelegate.swift */,
-				E5AF31512A0A504C00FB2C92 /* ViewController.swift */,
-				E5AF31532A0A504C00FB2C92 /* Main.storyboard */,
+				E507AD3C2A1B6D6800F1A976 /* Model */,
+				E507AD3A2A1B6D3100F1A976 /* View */,
+				E507AD412A1B849300F1A976 /* CustomView */,
+				E507AD3B2A1B6D5100F1A976 /* Controller */,
 				E5AF31562A0A504D00FB2C92 /* Assets.xcassets */,
 				E5AF315B2A0A504D00FB2C92 /* Info.plist */,
 			);
@@ -230,6 +268,7 @@
 			files = (
 				E5AF31572A0A504D00FB2C92 /* Assets.xcassets in Resources */,
 				E5AF31552A0A504C00FB2C92 /* Main.storyboard in Resources */,
+				E507AD4D2A1B8AFF00F1A976 /* CustomTextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E507AD492A1B8A7500F1A976 /* CustomTextField.swift in Sources */,
 				E5AF31522A0A504C00FB2C92 /* ViewController.swift in Sources */,
 				E5AF314E2A0A504C00FB2C92 /* AppDelegate.swift in Sources */,
 				E5AF31502A0A504C00FB2C92 /* SceneDelegate.swift in Sources */,
