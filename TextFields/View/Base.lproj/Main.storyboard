@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-VariableFont_wght.ttf">
+            <string>Rubik-Light_Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -16,32 +21,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Fields" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3Q-NC-LX3">
-                                <rect key="frame" x="16" y="151" width="361" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Fields" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3Q-NC-LX3" userLabel="Title">
+                                <rect key="frame" x="16" y="92" width="361" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="YDv-Jg-xFv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="Rubik-Light_Regular" family="Rubik Light" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhB-zt-B5W" customClass="CustomTextField" customModule="TextFields" customModuleProvider="target">
-                                <rect key="frame" x="25" y="401" width="343" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhB-zt-B5W" userLabel="No Digits Text Field" customClass="NoDigitsTextField" customModule="TextFields" customModuleProvider="target">
+                                <rect key="frame" x="16" y="187" width="361" height="36"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="rGJ-MQ-ngZ"/>
-                                    <constraint firstAttribute="height" constant="50" id="x2P-zy-OPU"/>
+                                    <constraint firstAttribute="height" constant="36" id="x2P-zy-OPU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3DP-8I-3GP" userLabel="Limits Text Field" customClass="TextFieldLimitAlert" customModule="TextFields" customModuleProvider="target">
+                                <rect key="frame" x="16" y="277" width="361" height="36"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="z7E-zp-6Ck"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yhB-zt-B5W" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4sL-BA-6v5"/>
+                            <constraint firstItem="3DP-8I-3GP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8cI-W2-FAO"/>
                             <constraint firstItem="T3Q-NC-LX3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="CfB-MN-Gr7"/>
+                            <constraint firstItem="yhB-zt-B5W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dgu-N6-WWq"/>
+                            <constraint firstItem="yhB-zt-B5W" firstAttribute="top" secondItem="T3Q-NC-LX3" secondAttribute="bottom" constant="54" id="WxD-rm-qXx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T3Q-NC-LX3" secondAttribute="trailing" constant="16" id="Y7S-Kk-vxA"/>
-                            <constraint firstItem="yhB-zt-B5W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qtS-bQ-4OS"/>
-                            <constraint firstItem="T3Q-NC-LX3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="xdA-cP-wUf"/>
+                            <constraint firstItem="3DP-8I-3GP" firstAttribute="top" secondItem="yhB-zt-B5W" secondAttribute="bottom" constant="54" id="cUR-mQ-zuI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yhB-zt-B5W" secondAttribute="trailing" constant="16" id="hYX-7H-wRR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3DP-8I-3GP" secondAttribute="trailing" constant="16" id="qKR-fA-0Il"/>
+                            <constraint firstItem="T3Q-NC-LX3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="92" id="xdA-cP-wUf"/>
                         </constraints>
                     </view>
                 </viewController>
