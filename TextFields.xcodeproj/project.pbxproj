@@ -12,6 +12,8 @@
 		E514E88F2A23633600D3BFD0 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E514E88E2A23633600D3BFD0 /* ColorHelper.swift */; };
 		E56F18902A221679005CF07D /* TextFieldLimitAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F188F2A221679005CF07D /* TextFieldLimitAlert.swift */; };
 		E56F18942A221963005CF07D /* TextFieldLimitAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56F18932A221963005CF07D /* TextFieldLimitAlert.xib */; };
+		E5A111732A264BFB00BDFE31 /* ValidationRulesTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5A111722A264BFB00BDFE31 /* ValidationRulesTextField.xib */; };
+		E5A111752A264C3700BDFE31 /* ValidationRulesTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A111742A264C3700BDFE31 /* ValidationRulesTextField.swift */; };
 		E5AF314E2A0A504C00FB2C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF314D2A0A504C00FB2C92 /* AppDelegate.swift */; };
 		E5AF31502A0A504C00FB2C92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF314F2A0A504C00FB2C92 /* SceneDelegate.swift */; };
 		E5AF31522A0A504C00FB2C92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF31512A0A504C00FB2C92 /* ViewController.swift */; };
@@ -20,6 +22,11 @@
 		E5AF31652A0A504D00FB2C92 /* TextFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF31642A0A504D00FB2C92 /* TextFieldsTests.swift */; };
 		E5AF316F2A0A504D00FB2C92 /* TextFieldsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF316E2A0A504D00FB2C92 /* TextFieldsUITests.swift */; };
 		E5AF31712A0A504D00FB2C92 /* TextFieldsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF31702A0A504D00FB2C92 /* TextFieldsUITestsLaunchTests.swift */; };
+		E5C1AA772A2740B600713101 /* OnlyCharactersTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C1AA762A2740B600713101 /* OnlyCharactersTextField.xib */; };
+		E5C1AA792A2740D000713101 /* OnlyCharactersTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C1AA782A2740D000713101 /* OnlyCharactersTextField.swift */; };
+		E5C4EF632A28D7F900A0F044 /* BrowserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4EF622A28D7F900A0F044 /* BrowserHelper.swift */; };
+		E5E3D5492A27EA4200D06AE2 /* Link.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E3D5482A27EA4200D06AE2 /* Link.xib */; };
+		E5E3D54B2A27EA5100D06AE2 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E3D54A2A27EA5100D06AE2 /* Link.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,8 @@
 		E514E88E2A23633600D3BFD0 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		E56F188F2A221679005CF07D /* TextFieldLimitAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLimitAlert.swift; sourceTree = "<group>"; };
 		E56F18932A221963005CF07D /* TextFieldLimitAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldLimitAlert.xib; sourceTree = "<group>"; };
+		E5A111722A264BFB00BDFE31 /* ValidationRulesTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValidationRulesTextField.xib; sourceTree = "<group>"; };
+		E5A111742A264C3700BDFE31 /* ValidationRulesTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationRulesTextField.swift; sourceTree = "<group>"; };
 		E5AF314A2A0A504C00FB2C92 /* TextFields.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextFields.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5AF314D2A0A504C00FB2C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5AF314F2A0A504C00FB2C92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,8 +66,13 @@
 		E5AF316A2A0A504D00FB2C92 /* TextFieldsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextFieldsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5AF316E2A0A504D00FB2C92 /* TextFieldsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsUITests.swift; sourceTree = "<group>"; };
 		E5AF31702A0A504D00FB2C92 /* TextFieldsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E5C1AA762A2740B600713101 /* OnlyCharactersTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnlyCharactersTextField.xib; sourceTree = "<group>"; };
+		E5C1AA782A2740D000713101 /* OnlyCharactersTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyCharactersTextField.swift; sourceTree = "<group>"; };
+		E5C4EF622A28D7F900A0F044 /* BrowserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserHelper.swift; sourceTree = "<group>"; };
 		E5E0DD102A20C7B200D2261D /* Rubik-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		E5E0DD112A20C7B200D2261D /* Rubik-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		E5E3D5482A27EA4200D06AE2 /* Link.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Link.xib; sourceTree = "<group>"; };
+		E5E3D54A2A27EA5100D06AE2 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +128,14 @@
 			children = (
 				E507AD482A1B8A7500F1A976 /* NoDigitsTextField.swift */,
 				E507AD4C2A1B8AFF00F1A976 /* NoDigitsTextField.xib */,
+				E5E3D5482A27EA4200D06AE2 /* Link.xib */,
+				E5C1AA762A2740B600713101 /* OnlyCharactersTextField.xib */,
+				E5A111722A264BFB00BDFE31 /* ValidationRulesTextField.xib */,
 				E56F18932A221963005CF07D /* TextFieldLimitAlert.xib */,
 				E56F188F2A221679005CF07D /* TextFieldLimitAlert.swift */,
+				E5A111742A264C3700BDFE31 /* ValidationRulesTextField.swift */,
+				E5C1AA782A2740D000713101 /* OnlyCharactersTextField.swift */,
+				E5E3D54A2A27EA5100D06AE2 /* Link.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -124,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				E514E88E2A23633600D3BFD0 /* ColorHelper.swift */,
+				E5C4EF622A28D7F900A0F044 /* BrowserHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -296,9 +317,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E56F18942A221963005CF07D /* TextFieldLimitAlert.xib in Resources */,
+				E5C1AA772A2740B600713101 /* OnlyCharactersTextField.xib in Resources */,
 				E5AF31572A0A504D00FB2C92 /* Assets.xcassets in Resources */,
 				E5AF31552A0A504C00FB2C92 /* Main.storyboard in Resources */,
+				E5E3D5492A27EA4200D06AE2 /* Link.xib in Resources */,
 				E507AD4D2A1B8AFF00F1A976 /* NoDigitsTextField.xib in Resources */,
+				E5A111732A264BFB00BDFE31 /* ValidationRulesTextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,8 +349,12 @@
 			files = (
 				E507AD492A1B8A7500F1A976 /* NoDigitsTextField.swift in Sources */,
 				E514E88F2A23633600D3BFD0 /* ColorHelper.swift in Sources */,
+				E5A111752A264C3700BDFE31 /* ValidationRulesTextField.swift in Sources */,
+				E5C1AA792A2740D000713101 /* OnlyCharactersTextField.swift in Sources */,
+				E5C4EF632A28D7F900A0F044 /* BrowserHelper.swift in Sources */,
 				E56F18902A221679005CF07D /* TextFieldLimitAlert.swift in Sources */,
 				E5AF31522A0A504C00FB2C92 /* ViewController.swift in Sources */,
+				E5E3D54B2A27EA5100D06AE2 /* Link.swift in Sources */,
 				E5AF314E2A0A504C00FB2C92 /* AppDelegate.swift in Sources */,
 				E5AF31502A0A504C00FB2C92 /* SceneDelegate.swift in Sources */,
 			);
@@ -503,8 +531,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -531,8 +558,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -44,19 +44,39 @@
                                     <constraint firstAttribute="height" constant="36" id="z7E-zp-6Ck"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6G-zG-ss7" userLabel="Mask Text Field" customClass="OnlyCharactersTextField" customModule="TextFields" customModuleProvider="target">
+                                <rect key="frame" x="16" y="367" width="361" height="36"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="DvI-Pi-FJY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpN-1b-ezq" userLabel="Link Text Field" customClass="Link" customModule="TextFields" customModuleProvider="target">
+                                <rect key="frame" x="16" y="457" width="361" height="36"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="PHi-An-gyR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3DP-8I-3GP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8cI-W2-FAO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HpN-1b-ezq" secondAttribute="trailing" constant="16" id="9sk-dF-EWn"/>
                             <constraint firstItem="T3Q-NC-LX3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="CfB-MN-Gr7"/>
                             <constraint firstItem="yhB-zt-B5W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dgu-N6-WWq"/>
                             <constraint firstItem="yhB-zt-B5W" firstAttribute="top" secondItem="T3Q-NC-LX3" secondAttribute="bottom" constant="54" id="WxD-rm-qXx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T3Q-NC-LX3" secondAttribute="trailing" constant="16" id="Y7S-Kk-vxA"/>
                             <constraint firstItem="3DP-8I-3GP" firstAttribute="top" secondItem="yhB-zt-B5W" secondAttribute="bottom" constant="54" id="cUR-mQ-zuI"/>
+                            <constraint firstItem="HpN-1b-ezq" firstAttribute="top" secondItem="b6G-zG-ss7" secondAttribute="bottom" constant="54" id="ccM-Ht-TS2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yhB-zt-B5W" secondAttribute="trailing" constant="16" id="hYX-7H-wRR"/>
+                            <constraint firstItem="b6G-zG-ss7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lHB-Ky-34g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b6G-zG-ss7" secondAttribute="trailing" constant="16" id="opn-yc-pFb"/>
+                            <constraint firstItem="b6G-zG-ss7" firstAttribute="top" secondItem="3DP-8I-3GP" secondAttribute="bottom" constant="54" id="pb2-3l-c2Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3DP-8I-3GP" secondAttribute="trailing" constant="16" id="qKR-fA-0Il"/>
                             <constraint firstItem="T3Q-NC-LX3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="92" id="xdA-cP-wUf"/>
+                            <constraint firstItem="HpN-1b-ezq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xpr-fk-KE5"/>
                         </constraints>
                     </view>
                 </viewController>

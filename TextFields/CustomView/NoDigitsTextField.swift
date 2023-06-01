@@ -11,6 +11,9 @@ class NoDigitsTextField: UIView, UITextFieldDelegate {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var textField: UITextField!
 
+    let allowedCharacters = CharacterSet.decimalDigits.inverted
+    var characterSet = CharacterSet()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -23,8 +26,6 @@ class NoDigitsTextField: UIView, UITextFieldDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        textField.delegate = self
-        textField.layer.cornerRadius = 12.0
     }
 
     private func commonInit() {
@@ -33,11 +34,12 @@ class NoDigitsTextField: UIView, UITextFieldDelegate {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         textField.layer.borderColor = ColorHelper.hexStringToUIColor(hex: "#007AFF").cgColor
+        textField.delegate = self
+        textField.layer.cornerRadius = 12.0
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let allowedCharacters = CharacterSet.decimalDigits.inverted
-        let characterSet = CharacterSet(charactersIn: string)
+        characterSet = CharacterSet(charactersIn: string)
         return allowedCharacters.isSuperset(of: characterSet)
     }
 
@@ -45,7 +47,6 @@ class NoDigitsTextField: UIView, UITextFieldDelegate {
         textField.layer.borderWidth = 0.0
     }
 
-    
     @IBAction func editingDidBegin(_ sender: UITextField) {
         textField.layer.borderWidth = 1.0
     }

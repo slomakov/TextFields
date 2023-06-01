@@ -28,8 +28,6 @@ class TextFieldLimitAlert: UIView, UITextFieldDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        textField.delegate = self
-        textField.layer.cornerRadius = 12.0
     }
 
     private func commonInit() {
@@ -38,15 +36,16 @@ class TextFieldLimitAlert: UIView, UITextFieldDelegate {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         textField.layer.borderColor = textFieldFocusedColor
+        textField.delegate = self
+        textField.layer.cornerRadius = 12.0
     }
 
     
     @IBAction func inputDidChange(_ sender: UITextField) {
         let inputTextLength = textField.text!.count
-        let limitCounter = maxInputLength - inputTextLength
-        lowerLimitIndicator.text = String(limitCounter)
-        upperLimitIndicator.text = "\(inputTextLength)/10"
-        checkLimitExceed(limitCounter)
+        lowerLimitIndicator.text = String(maxInputLength - inputTextLength)
+        upperLimitIndicator.text = "\(inputTextLength)/\(maxInputLength)"
+        checkLimitExceed(inputTextLength)
     }
 
     @IBAction func editingBegin(_ sender: UITextField) {
@@ -59,8 +58,8 @@ class TextFieldLimitAlert: UIView, UITextFieldDelegate {
         }
     }
     
-    private func checkLimitExceed(_ limitCounter: Int) {
-        if limitCounter < 0 {
+    private func checkLimitExceed(_ inputTextLength: Int) {
+        if inputTextLength > maxInputLength {
             lowerLimitIndicator.textColor = .red
             textField.layer.borderWidth = 1.0
             textField.layer.borderColor = UIColor.red.cgColor
@@ -73,17 +72,13 @@ class TextFieldLimitAlert: UIView, UITextFieldDelegate {
 
     private func paintExceedLimitText() {
         let text = textField.text!
-        let allowedSizeString = String(text.prefix(maxInputLength))
-        let exceedLimitSizeString = String(text.suffix(text.count - maxInputLength))
+        let mutableAttributedString = NSMutableAttributedString.init(string: text)
 
-        let mutableAttributedStringStart = NSMutableAttributedString.init(string: allowedSizeString)
-        let mutableAttributedStringEnd = NSMutableAttributedString.init(string: exceedLimitSizeString)
+        let textRange = NSRange(text.startIndex..<text.endIndex, in: text)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: textRange)
+        let exceedLimitSizeRange = NSRange(text.index(text.startIndex, offsetBy: maxInputLength)..., in: text)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: exceedLimitSizeRange)
 
-        let range = NSRange(exceedLimitSizeString.startIndex..<exceedLimitSizeString.endIndex, in: exceedLimitSizeString)
-
-        mutableAttributedStringEnd.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: range)
-
-        mutableAttributedStringStart.append(mutableAttributedStringEnd)
-        textField.attributedText = mutableAttributedStringStart
+        textField.attributedText = mutableAttributedString
     }
 }
