@@ -12,6 +12,7 @@ class OnlyCharactersTextField: UIView, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
 
     var characterSet = CharacterSet()
+    let inputFieldMask = "wwwww-ddddd"
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,34 +54,25 @@ class OnlyCharactersTextField: UIView, UITextFieldDelegate {
     }
 
     private func formattedStringAndDigits(str: String) -> String {
-        var cleanLetters: String
-        var cleanNumbers: String
-        let mask = "-ddddd"
+        if str.count >= inputFieldMask.count {
+            return String(str.prefix(inputFieldMask.count))
+        }
+        let charArray = Array(str)
+        let maskArray = Array(inputFieldMask)
         var result = ""
+        var counter = 0
 
-        if str.count <= 5 {
-            cleanLetters = str.components(separatedBy: CharacterSet.letters.inverted).joined()
-
-            for char in cleanLetters {
+        for char in charArray {
+            if maskArray[counter] == "w" && char.isLetter {
+                result.append(char)
+            } else if maskArray[counter] == "d" && char.isNumber {
                 result.append(char)
             }
-        } else if str.count > 5 {
-            var counter = 1
-            cleanNumbers = str.suffix(str.count - counter).components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-            var index = cleanNumbers.startIndex
-
-            for ch in mask where index < cleanNumbers.endIndex {
-                if ch == "d" {
-                    result.append(cleanNumbers[index])
-                    index = cleanNumbers.index(after: index)
-                    counter += 1
-                } else {
-                    result.append(ch)
-                }
+            else if maskArray[counter] == "-" {
+                result.append(maskArray[counter])
             }
+            counter += 1
         }
-//        print("++++++++")
-//        print(result)
         return result
     }
 
