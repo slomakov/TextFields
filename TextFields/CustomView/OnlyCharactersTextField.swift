@@ -13,6 +13,7 @@ class OnlyCharactersTextField: UIView, UITextFieldDelegate {
 
     var characterSet = CharacterSet()
     let inputFieldMask = "wwwww-ddddd"
+    private lazy var inputFieldMaskCharacters = Array(inputFieldMask)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,6 +37,7 @@ class OnlyCharactersTextField: UIView, UITextFieldDelegate {
         textField.layer.borderColor = ColorHelper.hexStringToUIColor(hex: "#007AFF").cgColor
         textField.delegate = self
         textField.layer.cornerRadius = 12.0
+        textField.placeholder = inputFieldMask
     }
 
     @IBAction func editingDidEnd(_ sender: UITextField) {
@@ -49,48 +51,54 @@ class OnlyCharactersTextField: UIView, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string:  String) -> Bool {
         guard let text = textField.text else { return false }
         let newString = (text as NSString).replacingCharacters(in: range, with: string)
-        textField.text = formattedStringAndDigits(str: newString)
+        textField.text = formattedStringAndDigits(str: newString, isDeleting: string.isEmpty)
+        DispatchQueue.main.async {
+            textField.placeCursorAtEnd()
+        }
         return false
     }
 
-    private func formattedStringAndDigits(str: String) -> String {
-        if str.count >= inputFieldMask.count {
-            return String(str.prefix(inputFieldMask.count))
-        }
+    private func formattedStringAndDigits(str: String, isDeleting: Bool) -> String {
         let charArray = Array(str)
-        let maskArray = Array(inputFieldMask)
         var result = ""
-        var counter = 0
+        var textCounter = 0
+        var maskCounter = 0
 
-        for char in charArray {
-            if maskArray[counter] == "w" && char.isLetter {
-                result.append(char)
-            } else if maskArray[counter] == "d" && char.isNumber {
-                result.append(char)
+        while textCounter < charArray.count && maskCounter < inputFieldMaskCharacters.count {
+            switch inputFieldMaskCharacters[maskCounter] {
+            case "w":
+                if charArray[textCounter].isLetter {
+                    result.append(charArray[textCounter])
+                    maskCounter += 1
+                }
+            case "d":
+                if charArray[textCounter].isNumber {
+                    result.append(charArray[textCounter])
+                    maskCounter += 1
+                }
+            case "-":
+                result.append("-")
+                maskCounter += 1
+            default:
+                assertionFailure("Implement if needed")
+                maskCounter += 1
             }
-            else if maskArray[counter] == "-" {
-                result.append(maskArray[counter])
-            }
-            counter += 1
+            textCounter += 1
         }
+        if textCounter < inputFieldMaskCharacters.count && inputFieldMaskCharacters[result.count] == "-" && !isDeleting {
+            result.append("-")
+        }
+        if isDeleting && inputFieldMaskCharacters[result.count] == "-" {
+            return String(result.dropLast())
+        }
+
         return result
     }
+}
 
-    private func formattedString(str: String) -> String {
-        // This works for phone numbers
-        let cleanPhoneNumber = str.components(separatedBy: CharacterSet.letters.inverted).joined()
+extension UITextField {
 
-        let mask = "##-###-###"
-        var result = ""
-        var index = cleanPhoneNumber.startIndex
-        for ch in mask where index < cleanPhoneNumber.endIndex {
-            if ch == "#" {
-                result.append(cleanPhoneNumber[index])
-                index = cleanPhoneNumber.index(after: index)
-            } else {
-                result.append(ch)
-            }
-        }
-        return result
+    func placeCursorAtEnd() {
+        selectedTextRange = textRange(from: endOfDocument, to: endOfDocument)
     }
 }
