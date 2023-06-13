@@ -89,7 +89,7 @@ class OnlyCharactersTextField: UIView, UITextFieldDelegate {
             result.append("-")
         }
         if isDeleting && inputFieldMaskCharacters[result.count] == "-" {
-            return String(result.dropLast())
+            result = String(result.dropLast())
         }
 
         return result
